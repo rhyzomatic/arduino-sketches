@@ -1,4 +1,4 @@
-bool debug = true;
+bool debug = false;
 
 int num_notes = 6;
 int note_state = 0; // note is on if bit in note's position is 1
@@ -45,7 +45,6 @@ void setup() {
 }
 
 void loop() {
-  /*
   note_state = 0;
   for (note_index = 0; note_index < num_notes; note_index++){
     photocell_reading = analogRead(note_pins[note_index]);
@@ -58,8 +57,9 @@ void loop() {
     if (photocell_reading < photocell_threshold){
       note_state = note_state + (1 << note_index);
     }
-  } */
+  }
 
+  /*
   photocellReading = RCtime(photocellPin);
   if (photocellReading == 30000){
     Serial.println("bad");
@@ -67,14 +67,14 @@ void loop() {
   else {
     Serial.print(photocellReading);
     Serial.print(" boop\t");
-  }
+  }*/
 
   //Serial.print("\t:   ");
-  /*
+  
   if ((old_note_state ^ note_state) and (!debug)){
     Serial.write(note_state);
     old_note_state = note_state;
-  }*/
+  }
   if (debug){
     Serial.println();
     delay(500);
